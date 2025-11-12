@@ -27,10 +27,10 @@
   musnix = {
     enable = true;
     alsaSeq.enable = false;
-    rtirq.enable = true;
-    rtirq.nameList = "rtc0 snd";
-    rtirq.resetAll = 1;
-    rtirq.prioLow = 0;
+    rtirq.enable = false;
+    #rtirq.nameList = "rtc0 snd";
+    #rtirq.resetAll = 1;
+    #rtirq.prioLow = 0;
   };
 
   # CPU governor

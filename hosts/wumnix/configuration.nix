@@ -7,8 +7,9 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ./audio.nix
-      ./gaming.nix
+      ./modules/audio.nix
+      ./modules/gaming.nix
+      ./modules/desktop.nix
     ];
 
   # Bootloader.
@@ -85,42 +86,16 @@
     ];
   };
 
-#  home-manager = {
-#    extraSpecialArgs = { inherit inputs; };
-#    users = {
-#      "wump" = import ./home.nix;
-#    };
-#  };
-
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "wump";
 
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Enable Flatpaks
   services.flatpak.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    fastfetch
-    brave
-    efibootmgr
-    zed-editor
-    wineWowPackages.yabridge
-    yabridge
-    yabridgectl
-    reaper
-    ardour
-    kdePackages.kdenlive
-    kitty
-  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

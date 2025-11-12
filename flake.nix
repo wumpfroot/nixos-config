@@ -33,7 +33,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.wump = import ./home.nix;
+            home-manager.users.wump = import ./hosts/wumnix/home/home.nix;
           }
         ];
         specialArgs = { inherit inputs; };

@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  # Install audio software here
+  environment.systemPackages = with pkgs; [
+    wineWowPackages.yabridge
+    yabridge
+    yabridgectl
+    reaper
+    ardour
+  ];
+
+
   # Pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

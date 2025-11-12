@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonplus
+    heroic
   ];
 
   programs.gamemode.enable = true;

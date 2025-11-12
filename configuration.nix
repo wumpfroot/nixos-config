@@ -118,6 +118,7 @@
     yabridgectl
     reaper
     ardour
+    kdePackages.kdenlive
   ];
 
   # Open ports in the firewall.

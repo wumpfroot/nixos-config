@@ -9,7 +9,6 @@
       ./hardware-configuration.nix
       ./audio.nix
       ./gaming.nix
-      ./theme.nix
     ];
 
   # Bootloader.

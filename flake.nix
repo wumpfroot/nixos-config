@@ -27,11 +27,11 @@
       wumnix = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./configuration.nix
+          ./hosts/wumnix/configuration.nix
           musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.users.wump = import ./hosts/wumnix/home/home.nix;
           }

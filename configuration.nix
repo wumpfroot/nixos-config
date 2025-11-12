@@ -8,6 +8,7 @@
   imports = [
       ./hardware-configuration.nix
       ./audio.nix
+      ./gaming.nix
     ];
 
   # Bootloader.

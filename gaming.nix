@@ -2,13 +2,7 @@
 
 {
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver.videoDrivers = [ "amdgpu" ]
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Steam
   programs.steam.enable = true;
@@ -16,6 +10,7 @@
 
   environment.systemPackages = with pkgs; [
     mangohud
+    protonplus
   ];
 
   programs.gamemode.enable = true;

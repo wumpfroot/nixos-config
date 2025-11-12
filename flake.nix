@@ -14,14 +14,7 @@
   outputs = { self, nixpkgs, musnix, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
-
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [ musnix.overlay ];
-    };
-
   in {
-    packages.${system}.default = pkgs.hello;
 
     nixosConfigurations = {
       wumnix = nixpkgs.lib.nixosSystem {
@@ -31,8 +24,8 @@
           musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.wump = import ./hosts/wumnix/home/home.nix;
           }
         ];

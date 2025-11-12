@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+     # inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -95,6 +96,13 @@
     #  thunderbird
     ];
   };
+
+#  home-manager = {
+#    extraSpecialArgs = { inherit inputs; };
+#    users = {
+#      "wump" = import ./home.nix;
+#    };
+#  };
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;

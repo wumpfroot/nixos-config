@@ -112,6 +112,11 @@
     brave
     efibootmgr
     zed-editor
+    wineWowPackages.yabridge
+    yabridge
+    yabridgectl
+    reaper
+    ardour
   ];
 
   # Open ports in the firewall.

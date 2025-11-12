@@ -119,6 +119,7 @@
     reaper
     ardour
     kdePackages.kdenlive
+    kitty
   ];
 
   # Open ports in the firewall.
